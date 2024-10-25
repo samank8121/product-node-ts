@@ -1,16 +1,16 @@
-import cors, { CorsOptions, CorsOptionsDelegate } from 'cors';
-import { Request } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
 const whitelist = ['http://localhost:5001'];
 
-const corsOptionsDelegate: CorsOptionsDelegate<Request> = (req, callback) => {
+export const corsWithOptions = (req: Request, res: Response, next: NextFunction) => {
   const origin = req.header('Origin');
   if (origin && whitelist.includes(origin)) {
-    callback(null, { origin: true });
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
   } else {
-    callback(new Error('Not allowed by CORS'), { origin: false });
+    res.status(403).send('Not allowed by CORS');
   }
 };
 
-export const corsMiddleware = cors();
-export const corsWithOptions = cors(corsOptionsDelegate);

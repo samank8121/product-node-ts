@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
-import { Cart } from '@/entities/Cart';
-import { CartProduct } from '@/entities/CartProduct';
-import { Product } from '@/entities/Product';
+import { Cart } from '@/entities/cart';
+import { CartProduct } from '@/entities/cartProduct';
+import { Product } from '@/entities/product';
 import asyncHandler from '@/utils/asyncHandler';
 import { corsWithOptions } from '@/middlewares/corsConfig';
 

@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { User } from '@/entities/User';
+import { User } from '@/entities/user';
 import asyncHandler from '@/utils/asyncHandler';
 import { corsWithOptions } from '@/middlewares/corsConfig';
 

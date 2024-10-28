@@ -8,8 +8,8 @@ import {
   OneToOne,
   OneToMany,
 } from 'typeorm';
-import { User } from './User';
-import { CartProduct } from './CartProduct';
+import { User } from './user';
+import { CartProduct } from './cartProduct';
 
 @Entity()
 export class Cart extends BaseEntity {

@@ -1,9 +1,9 @@
 import { DataSource } from 'typeorm';
-import { Product } from '@/entities/Product';
-import { User } from '@/entities/User';
-import { Cart } from '@/entities/Cart';
+import { Product } from '@/entities/product';
+import { User } from '@/entities/user';
+import { Cart } from '@/entities/cart';
 import dotenv from 'dotenv';
-import { CartProduct } from '@/entities/CartProduct';
+import { CartProduct } from '@/entities/cartProduct';
 
 dotenv.config();
 

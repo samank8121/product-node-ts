@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Cart } from './Cart';
+import { Cart } from './cart';
 
 @Entity()
 export class User extends BaseEntity {

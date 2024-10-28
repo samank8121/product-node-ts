@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { User } from '@/entities/User';
+import { User } from '@/entities/user';
 import * as jwt from 'jsonwebtoken';
 import argon2 from 'argon2';
 import asyncHandler from '@/utils/asyncHandler';

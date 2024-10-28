@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { Product } from '@/entities/Product'; // Adjust the import according to your structure
+import { Product } from '@/entities/product'; // Adjust the import according to your structure
 import asyncHandler from '@/utils/asyncHandler';
 import { corsWithOptions } from '@/middlewares/corsConfig';
 

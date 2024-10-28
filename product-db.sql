@@ -330,3 +330,9 @@ ALTER TABLE ONLY public.cart_product
 -- PostgreSQL database dump complete
 --
 
+INSERT INTO public.product (id, caption, price, slug, weight, rate, description, "imageSrc", "createdAt", "updatedAt") VALUES
+(1, 'Milk', 150, 'milk', '100 ml', 3, 'milk des', '/images/products/milk.jpg', '2024-09-06 12:47:32.46343', '2024-09-06 12:47:32.46343'),
+(2, 'Cola', 200, 'cola', '1.5 l', 4, 'cola des', '/images/products/cola.jpg', '2024-09-06 12:47:32.46343', '2024-09-06 12:47:32.46343'),
+(3, 'Cheese', 50, 'cheese', '250 gr', 2, 'cheese des', '/images/products/cheese.jpg', '2024-09-06 12:47:32.46343', '2024-09-06 12:47:32.46343'),
+(4, 'Chips', 0, 'chips', '275 gr', 4, 'chips des.', '/images/products/chips.jpg', '2024-09-06 12:47:32.46343', '2024-09-06 12:47:32.46343'),
+(5, 'Butter', 100, 'butter', '100 gr', 5, 'Butter Des', '/images/products/butter.jpg', '2024-09-06 12:47:32.46343', '2024-09-06 12:47:32.46343');

@@ -5,7 +5,7 @@
 -- Dumped from database version 16.4
 -- Dumped by pg_dump version 16.4
 
--- Started on 2024-10-28 12:34:55
+-- Started on 2024-10-28 12:54:57
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -17,6 +17,25 @@ SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
+
+--
+-- TOC entry 5 (class 2615 OID 2200)
+-- Name: public; Type: SCHEMA; Schema: -; Owner: pg_database_owner
+--
+
+CREATE SCHEMA public;
+
+
+ALTER SCHEMA public OWNER TO pg_database_owner;
+
+--
+-- TOC entry 4877 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: pg_database_owner
+--
+
+COMMENT ON SCHEMA public IS 'standard public schema';
+
 
 SET default_tablespace = '';
 
@@ -54,7 +73,7 @@ CREATE SEQUENCE public.cart_id_seq
 ALTER SEQUENCE public.cart_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4872 (class 0 OID 0)
+-- TOC entry 4878 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: cart_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -94,7 +113,7 @@ CREATE SEQUENCE public.cart_product_id_seq
 ALTER SEQUENCE public.cart_product_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4873 (class 0 OID 0)
+-- TOC entry 4879 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: cart_product_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -140,7 +159,7 @@ CREATE SEQUENCE public.product_id_seq
 ALTER SEQUENCE public.product_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4874 (class 0 OID 0)
+-- TOC entry 4880 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: product_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -183,7 +202,7 @@ CREATE SEQUENCE public.user_id_seq
 ALTER SEQUENCE public.user_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4875 (class 0 OID 0)
+-- TOC entry 4881 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -192,7 +211,7 @@ ALTER SEQUENCE public.user_id_seq OWNED BY public."user".id;
 
 
 --
--- TOC entry 4694 (class 2604 OID 16481)
+-- TOC entry 4699 (class 2604 OID 16481)
 -- Name: cart id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -200,7 +219,7 @@ ALTER TABLE ONLY public.cart ALTER COLUMN id SET DEFAULT nextval('public.cart_id
 
 
 --
--- TOC entry 4700 (class 2604 OID 16564)
+-- TOC entry 4705 (class 2604 OID 16564)
 -- Name: cart_product id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -208,7 +227,7 @@ ALTER TABLE ONLY public.cart_product ALTER COLUMN id SET DEFAULT nextval('public
 
 
 --
--- TOC entry 4697 (class 2604 OID 16490)
+-- TOC entry 4702 (class 2604 OID 16490)
 -- Name: product id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -216,29 +235,25 @@ ALTER TABLE ONLY public.product ALTER COLUMN id SET DEFAULT nextval('public.prod
 
 
 --
--- TOC entry 4691 (class 2604 OID 16466)
+-- TOC entry 4696 (class 2604 OID 16466)
 -- Name: user id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public."user" ALTER COLUMN id SET DEFAULT nextval('public.user_id_seq'::regclass);
 
 --
--- TOC entry 4864 (class 0 OID 16487)
+-- TOC entry 4869 (class 0 OID 16487)
 -- Dependencies: 221
 -- Data for Name: product; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.product (id, caption, price, slug, weight, rate, description, "imageSrc", "createdAt", "updatedAt") FROM stdin;
-1	Milk	150	milk	100 ml	3	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar lorem massa, quis commodo dui volutpat id. Nullam accumsan sodales nibh eu porttitor. Pellentesque lorem sem, faucibus gravida tempus sed, hendrerit ut tellus. Integer tincidunt sem vel volutpat dictum. Duis enim nulla, vulputate id sem ac, volutpat bibendum justo. Vivamus augue felis, viverra sed vestibulum in, accumsan vitae lectus. Ut quis neque a nunc faucibus dictum. Pellentesque sit amet interdum lectus. Nullam vulputate tincidunt est at semper. Vestibulum non pellentesque tortor, nec sollicitudin lectus. Proin gravida turpis a justo feugiat, a venenatis metus hendrerit.	/images/products/milk.jpg	2024-09-06 12:47:32.46343	2024-09-06 12:47:32.46343
-2	Cola	200	cola	1.5 l	4	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar lorem massa, quis commodo dui volutpat id. Nullam accumsan sodales nibh eu porttitor. Pellentesque lorem sem, faucibus gravida tempus sed, hendrerit ut tellus. Integer tincidunt sem vel volutpat dictum. Duis enim nulla, vulputate id sem ac, volutpat bibendum justo. Vivamus augue felis, viverra sed vestibulum in, accumsan vitae lectus. Ut quis neque a nunc faucibus dictum. Pellentesque sit amet interdum lectus. Nullam vulputate tincidunt est at semper. Vestibulum non pellentesque tortor, nec sollicitudin lectus. Proin gravida turpis a justo feugiat, a venenatis metus hendrerit.	/images/products/cola.jpg	2024-09-06 12:47:32.46343	2024-09-06 12:47:32.46343
-3	Cheese	50	cheese	250 gr	2	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar lorem massa, quis commodo dui volutpat id. Nullam accumsan sodales nibh eu porttitor. Pellentesque lorem sem, faucibus gravida tempus sed, hendrerit ut tellus. Integer tincidunt sem vel volutpat dictum. Duis enim nulla, vulputate id sem ac, volutpat bibendum justo. Vivamus augue felis, viverra sed vestibulum in, accumsan vitae lectus. Ut quis neque a nunc faucibus dictum. Pellentesque sit amet interdum lectus. Nullam vulputate tincidunt est at semper. Vestibulum non pellentesque tortor, nec sollicitudin lectus. Proin gravida turpis a justo feugiat, a venenatis metus hendrerit.	/images/products/cheese.jpg	2024-09-06 12:47:32.46343	2024-09-06 12:47:32.46343
-4	Chips	0	chips	275 gr	4	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar lorem massa, quis commodo dui volutpat id. Nullam accumsan sodales nibh eu porttitor. Pellentesque lorem sem, faucibus gravida tempus sed, hendrerit ut tellus. Integer tincidunt sem vel volutpat dictum. Duis enim nulla, vulputate id sem ac, volutpat bibendum justo. Vivamus augue felis, viverra sed vestibulum in, accumsan vitae lectus. Ut quis neque a nunc faucibus dictum. Pellentesque sit amet interdum lectus. Nullam vulputate tincidunt est at semper. Vestibulum non pellentesque tortor, nec sollicitudin lectus. Proin gravida turpis a justo feugiat, a venenatis metus hendrerit.	/images/products/chips.jpg	2024-09-06 12:47:32.46343	2024-09-06 12:47:32.46343
-5	Butter	100	butter	100 gr	5	Butter Des	/images/products/butter.jpg	2024-09-06 12:47:32.46343	2024-09-06 12:47:32.46343
-\.
+
+
+
 
 
 --
--- TOC entry 4711 (class 2606 OID 16496)
+-- TOC entry 4716 (class 2606 OID 16496)
 -- Name: product PK_bebc9158e480b949565b4dc7a82; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -247,7 +262,7 @@ ALTER TABLE ONLY public.product
 
 
 --
--- TOC entry 4709 (class 2606 OID 16485)
+-- TOC entry 4714 (class 2606 OID 16485)
 -- Name: cart PK_c524ec48751b9b5bcfbf6e59be7; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -256,7 +271,7 @@ ALTER TABLE ONLY public.cart
 
 
 --
--- TOC entry 4703 (class 2606 OID 16472)
+-- TOC entry 4708 (class 2606 OID 16472)
 -- Name: user PK_cace4a159ff9f2512dd42373760; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -265,7 +280,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- TOC entry 4713 (class 2606 OID 16567)
+-- TOC entry 4718 (class 2606 OID 16567)
 -- Name: cart_product PK_dccd1ec2d6f5644a69adf163bc1; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -274,7 +289,7 @@ ALTER TABLE ONLY public.cart_product
 
 
 --
--- TOC entry 4705 (class 2606 OID 16474)
+-- TOC entry 4710 (class 2606 OID 16474)
 -- Name: user UQ_78a916df40e02a9deb1c4b75edb; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -283,7 +298,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- TOC entry 4707 (class 2606 OID 16476)
+-- TOC entry 4712 (class 2606 OID 16476)
 -- Name: user UQ_e12875dfb3b1d92d7d7c5377e22; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -292,7 +307,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- TOC entry 4714 (class 2606 OID 16578)
+-- TOC entry 4719 (class 2606 OID 16578)
 -- Name: cart_product FK_139f8024067696fe5a8400ebda2; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -301,7 +316,7 @@ ALTER TABLE ONLY public.cart_product
 
 
 --
--- TOC entry 4715 (class 2606 OID 16583)
+-- TOC entry 4720 (class 2606 OID 16583)
 -- Name: cart_product FK_4f1b0c66f4e0b4610e14ca42e5c; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -309,7 +324,7 @@ ALTER TABLE ONLY public.cart_product
     ADD CONSTRAINT "FK_4f1b0c66f4e0b4610e14ca42e5c" FOREIGN KEY ("productId") REFERENCES public.product(id);
 
 
--- Completed on 2024-10-28 12:34:56
+-- Completed on 2024-10-28 12:54:57
 
 --
 -- PostgreSQL database dump complete

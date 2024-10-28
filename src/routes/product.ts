@@ -5,7 +5,6 @@ import { corsWithOptions } from '@/middlewares/corsConfig';
 
 const router = Router();
 
-// GET /products
 router.get(
   '/:slug',
   corsWithOptions,
@@ -20,7 +19,6 @@ router.get(
   })
 );
 
-// POST /products
 router.post(
   '/',
   corsWithOptions,

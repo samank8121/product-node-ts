@@ -1,11 +1,10 @@
 import { Router, Request, Response } from 'express';
-import { User } from '@/entities/User'; // Adjust the import according to your structure
+import { User } from '@/entities/User';
 import asyncHandler from '@/utils/asyncHandler';
 import { corsWithOptions } from '@/middlewares/corsConfig';
 
 const router = Router();
 
-// GET /users
 router.get(
   '/',
   corsWithOptions,
@@ -20,7 +19,6 @@ router.get(
   })
 );
 
-// Optionally, you might want to include a route to get a specific user by ID
 router.get(
   '/:id',
   corsWithOptions,

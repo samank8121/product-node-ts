@@ -7,7 +7,6 @@ import { corsWithOptions } from '@/middlewares/corsConfig';
 
 const router = Router();
 
-// POST /auth/login
 router.post(
   '/login',
   corsWithOptions,
@@ -36,7 +35,6 @@ router.post(
   })
 );
 
-// POST /auth/register
 router.post(
   '/register',
   corsWithOptions,

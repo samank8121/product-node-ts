@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response } from 'express';
 import { Cart } from '@/entities/Cart';
 import { CartProduct } from '@/entities/CartProduct';
 import { Product } from '@/entities/Product';
@@ -7,7 +7,6 @@ import { corsWithOptions } from '@/middlewares/corsConfig';
 
 const cartRouter = express.Router();
 
-// GET route to retrieve user's carts
 cartRouter.get(
   '/',
   corsWithOptions,
@@ -27,7 +26,6 @@ cartRouter.get(
   })
 );
 
-// POST route to add/change a product in the user's cart
 cartRouter.post(
   '/changeProduct',
   corsWithOptions,

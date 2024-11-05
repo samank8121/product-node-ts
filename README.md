@@ -10,5 +10,6 @@ To start the development server, run:
 
 
 ## Description
-This project is node.js sample, this is a express backend which connect to postgresql I used typeorm
+An e-commerce backend using Node.js, TypeORM, and Express.js, seamlessly integrating with PostgreSQL. This project includes structured data models for core entities like Product, Cart, User, and Product_Cart, ensuring efficient handling of product listings, user information, and cart management. The application leverages TypeORM for ORM capabilities, allowing smooth database interactions and flexible query building.
+
 

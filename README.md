@@ -12,4 +12,5 @@ To start the development server, run:
 ## Description
 An e-commerce backend using Node.js, TypeORM, and Express.js, seamlessly integrating with PostgreSQL. This project includes structured data models for core entities like Product, Cart, User, and Product_Cart, ensuring efficient handling of product listings, user information, and cart management. The application leverages TypeORM for ORM capabilities, allowing smooth database interactions and flexible query building.
 
-
+## Author
+[Saman Kefayatpour](https://www.linkedin.com/in/samankefayatpour/)
